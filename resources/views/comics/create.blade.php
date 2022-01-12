@@ -13,12 +13,28 @@
                 <input type="text" class="form-control" name="title" id="field_title">
             </div>
             <div>
-                <label for="field_email" class="form-label">Desc</label>
+                <label for="field_description" class="form-label">Desc</label>
                 <input type="text" class="form-control" name="description" id="field_description">
             </div>
             <div>
-                <label for="field_email" class="form-label">Price</label>
+                <label for="field_price" class="form-label">Price</label>
                 <input type="text" class="form-control" name="price" id="field_price">
+            </div>
+            <div>
+                <label for="field_thumb" class="form-label">Thumb</label>
+                <input type="text" class="form-control" name="thumb" id="field_thumb">
+            </div>
+            <div>
+                <label for="field_series" class="form-label">Series</label>
+                <input type="text" class="form-control" name="series" id="field_series">
+            </div>
+            <div>
+                <label for="field_sale_date" class="form-label">Sale-date</label>
+                <input type="text" class="form-control" name="sale_date" id="field_sale_date">
+            </div>
+            <div>
+                <label for="field_type" class="form-label">Type</label>
+                <input type="text" class="form-control" name="type" id="field__type">
             </div>
 
 
