@@ -6,7 +6,9 @@
         </div>
 
         <div class="links">
-            <a href="http://127.0.0.1:8000/comics.index">Comics</a>
+        <a href="{{ route('home') }}">Home</a>
+        <a href="{{ route('comics.index') }}">Comics</a>
+            
         </div>
     </div>
 </div>
