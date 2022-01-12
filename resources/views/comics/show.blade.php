@@ -4,8 +4,7 @@
 
 @section("content")
 <div class="container">
-  <h1>title {{ $comic->title }}</h1>
-  <h3>price: {{$comic->price}} </h3>
+  <h1>Hello</h1>
 
 </div>
 @endsection

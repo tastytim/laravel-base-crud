@@ -1,12 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Comic;
-use Exception;
 use Illuminate\Http\Request;
 
-
-class Comicscontroller extends Controller
+class ComicController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,8 @@ class Comicscontroller extends Controller
      */
     public function index()
     {
-        return view("comics.index");
+        $comics = Comic::all();
+        return view('comics.index',compact('comics'));
     }
 
     /**
@@ -25,7 +25,7 @@ class Comicscontroller extends Controller
      */
     public function create()
     {
-        return view('comics.create');
+        //
     }
 
     /**
