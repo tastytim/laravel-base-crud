@@ -15,7 +15,7 @@ class ComicController extends Controller
     public function index()
     {
         $comics = Comic::all();
-        return view('comics.index',compact('comics'));
+        return view('comics.index', compact('comics'));
     }
 
     /**
@@ -34,20 +34,21 @@ class ComicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         $request->validate([
-          "title" => "required",
-          "description" => "required",
-          "price" => "required"
+            "title" => "required",
+            "description" => "required",
+            "price" => "required"
         ]);
-    
+
         $data = $request->all();
         $newComic = new Comic();
         $newComic->fill($data);
         $newComic->save();
-    
+
         return redirect()->route("comics.index");
-      }
+    }
 
     /**
      * Display the specified resource.
@@ -66,9 +67,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comic $comic)
     {
-        //
+        return view('comics.edit', compact("comic"));
     }
 
     /**
@@ -78,9 +79,19 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        // $password = $request->input('password');
+        // if(!$password){
+        //     $data = $request->except('password');
+        // }else{
+        //     $data = $request->all();
+        // }
+
+
+        $data = $request->all();
+        $comic->update($data);
+        return redirect()->route("comics.index");
     }
 
     /**
@@ -91,6 +102,10 @@ class ComicController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        $comic = Comic::findOrFail($id);
+        $comic->delete();
+        return redirect()->route('comics.index');
+        
     }
 }
