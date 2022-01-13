@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Comic;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 class ComicController extends Controller
@@ -88,10 +89,17 @@ class ComicController extends Controller
         //     $data = $request->all();
         // }
 
+        
+
 
         $data = $request->all();
+
+        Validator::make($data,[
+            "title" => "min:5",
+        ])->validate();
+
         $comic->update($data);
-        return redirect()->route("comics.index");
+        return redirect()->route("comics.show", $comic->id)->with("msg","Updated successfully" );
     }
 
     /**

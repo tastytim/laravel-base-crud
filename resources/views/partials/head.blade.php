@@ -75,6 +75,11 @@
             margin-bottom: 100px;
         }
 
+        img{
+            width:192px;
+            height:291px;
+        }
+
 
     </style>
 </head>
